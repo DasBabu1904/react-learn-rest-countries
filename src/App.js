@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+// different  directory used and import explained  
+
 import './App.css';
-import { useEffect, useState } from 'react';
-import Countries from './components/Countries';
+import Countries from './component/Countries/Countries';
 
 function App() {
   return (
@@ -10,6 +10,24 @@ function App() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export default App;
+
+
 
 // function LoadCountries() {
 //   const [countries, setCountries] = useState([])
@@ -40,5 +58,3 @@ function App() {
 //   )
 // }
 
-
-export default App;
