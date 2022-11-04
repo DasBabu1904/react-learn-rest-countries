@@ -1,43 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
+import Countries from './components/Countries';
 
 function App() {
   return (
     <div className="App">
-      <LoadCountries></LoadCountries>
+      <Countries></Countries>
     </div>
   );
 }
 
-function LoadCountries() {
-  const [countries, setCountries] = useState([])
-  useEffect(() => {
-    fetch('https://restcountries.com/v3.1/all')
-      .then(res => res.json())
-      .then(data => setCountries(data))
-  }, [])
+// function LoadCountries() {
+//   const [countries, setCountries] = useState([])
+//   useEffect(() => {
+//     fetch('https://restcountries.com/v3.1/all')
+//       .then(res => res.json())
+//       .then(data => setCountries(data))
+//   }, [])
 
-  return (
-    <div>
-      <h1> visiting rest of the countries</h1>
-      <h3>available countries: {countries.length}</h3>
-      {
-        countries.map(country => <Country name={country.name.common} population={country.population}></Country>)
-      }
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       <h1> visiting rest of the countries</h1>
+//       <h3>available countries: {countries.length}</h3>
+//       {
+//         countries.map(country => <Country name={country.name.common} population={country.population}></Country>)
+//       }
+//     </div>
+//   )
+// }
 
-function Country(props) {
-  return (
-    <div>
-      <h2>Name: {props.name}</h2>
-      <h3>Population: {props.population}</h3>
+// function Country(props) {
+//   return (
+//     <div>
+//       <h2>Name: {props.name}</h2>
+//       <h3>Population: {props.population}</h3>
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
 
 export default App;
