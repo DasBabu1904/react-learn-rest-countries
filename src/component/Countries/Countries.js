@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import './Countries.css'
+import './Countries.css';
+import './country.css'
 
 const Countries = () => {
     return (
         <div>
             <h1>Hello form Countries</h1>
-            <LoadCountries></LoadCountries>
+            <LoadCountries ></LoadCountries>
         </div>
     );
 };
@@ -19,12 +20,22 @@ function LoadCountries() {
     }, [])
 
     return (
-        <div >
+        <div>
             <h1> visiting rest of the countries</h1>
             <h3>available countries: {countries.length}</h3>
-            {
-                countries.map(country => <Country name={country.name.common} population={country.population} flag={country.flags.png}></Country>)
-            }
+            <div className="countries-container">
+                {
+                    countries.map(country =>
+
+                        <Country
+                            key={country.cca3}
+                            name={country.name.common}
+                            population={country.population}
+                            flag={country.flags.png}>
+
+                        </Country>)
+                }
+            </div>
         </div>
     )
 }
